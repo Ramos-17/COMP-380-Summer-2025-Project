@@ -1,0 +1,211 @@
+Project Summary:
+  This is a web app for a small clinic to manage their appointments, treatments, and medical history. The system supports multiple roles, each with customized dashboards and functionalities specific for their responsibilities. Key Features include appointment scheduling and tracking, real-time treatment plan updates and documentation, access to patient medical history and care information.
+  The backend will be built using python with the Flask framework and the frontend will be developed using React. MySQL will be the primary database for storing patient and storing clinic data. Code will be version controlled through GitHub.
+
+
+Roles:
+  - Doctor, 
+  - Nurse, 
+  - Clinic Manager,
+
+User Stories:
+
+Doctor:
+User Story 1: 
+As a Doctor, I want to receive alerts when a patient with critical status is scheduled, so I can prepare accordingly.
+
+Tasks:
+	•	Integrate alert system to notify doctors when a critical-status patient is booked.
+	•	Identify patients marked as “critical” during scheduling and trigger alert.
+
+Acceptance Criteria:
+	•	Given a critical-status patient is added to the schedule, When the doctor logs in, Then a notification should appear on their dashboard.
+	•	Given a doctor is logged into the system, When a new critical patient is scheduled, Then they should receive a real-time alert.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+User Story 2:
+As a Doctor, I want to update the current treatment stage of a patient, so that progress is accurately tracked.
+
+Tasks:
+	•	Create a form to select and update treatment stage.
+	•	Connect treatment stage updates to patient medical records.
+
+Acceptance Criteria:
+	•	Given I access a patient’s profile, When I update the treatment stage, Then the new stage should be saved and timestamped.
+	•	Given a treatment stage is updated, When another provider accesses the profile, Then the most recent stage should be visible immediately.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+User Story 3:
+As a Doctor, I want to view a patient’s medical history, so I can provide better treatment decisions.
+
+Tasks:
+	•	Design a patient history section in the profile view.
+	•	Connect backend to retrieve historical records, diagnoses, and treatments.
+
+Acceptance Criteria:
+	•	Given I open a patient’s profile, When I click on “Medical History,” Then I should see a chronological list of past visits, diagnoses, and treatments.
+	•	Given a patient has multiple entries, When I review their medical history, Then all historical data should be readable and correctly formatted.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+User Story 4:
+As a Doctor, I want to add treatment notes to a patient’s appointment, so I can keep a record of the consultation.
+
+Tasks:
+	•	Provide a text field for doctors to enter consultation notes.
+	•	Link treatment notes to the patient’s appointment record.
+
+Acceptance Criteria:
+	•	Given I complete a patient consultation, When I enter and save treatment notes, Then the notes should be attached to that appointment.
+	•	Given a note is submitted, When I reopen the appointment, Then I should see the saved notes and the timestamp.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+User Story 5: 
+As a Doctor, I want to view my daily appointment schedule, so I can manage my time efficiently.
+
+Tasks:
+	•	Create a dashboard view showing today’s appointments.
+	•	Filter appointments by date and time for the logged-in doctor.
+
+Acceptance Criteria:
+	•	Given I log into my dashboard, When I view my schedule, Then I should see all appointments assigned to me for the current day.
+	•	Given appointments are scheduled or canceled, When I refresh the schedule, Then it should reflect the most up-to-date list.
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Nurse Role: 
+
+User Story 1: 
+	•	As a Nurse, I want to access treatment plans and patient histories during consultations, So that I can effectively assist doctors and ensure procedures run smoothly.
+
+Tasks:
+	•	Build interface for nurses to access real-time treatment plans and patient histories.
+	•	Implement logging functionality for nurse actions during procedures.
+
+Acceptance Criteria:
+	•	Given I am assigned to a patient, When a doctor begins treatment, Then I should be able to view the treatment plan and relevant patient records in real time.
+	•	Given I am assisting during a procedure, When the doctor requests a specific action or item, Then the system should allow me to log those actions for documentation purposes.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+User Story 2:
+As a Nurse, I want to accurately record and update patient vital signs in the system, So that doctors and staff have up-to-date information for diagnosis and treatment.
+
+Tasks:
+	•	Design input forms for vital sign entry during rounds or check-ins.
+	•	Add automatic alerts for abnormal vitals with physician notification.
+
+Acceptance Criteria:
+	•	Given I complete a patient check-in or round, When I record vital signs (e.g., temperature, blood pressure, pulse), Then the data should be timestamped and saved to the patient’s electronic health record.
+	•	Given a vital sign is outside the normal range, When I enter it, Then the system should flag it and optionally notify the attending physician.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+User Story 3: 
+As a Nurse, I want to view scheduled medications and log administration times, So that I ensure patients receive the correct medications on time and avoid dosage errors.
+
+Tasks:
+	•	Connect patient charts to a medication schedule display.
+	•	Enable nurses to log medication administration with timestamps.
+
+Acceptance Criteria:
+	•	Given a patient has prescribed medications, When I review their chart, Then I should see a medication schedule including dosage, route, and timing.
+	•	Given I administer a medication, When I log the action, Then the system should update the administration history and prevent duplicate dosing.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+User Story 4: 
+As a Nurse, I want to document patient progress and follow-up observations, So that care plans can be adjusted based on patient responses.
+
+Tasks:
+	•	Provide text input and dropdowns for follow-up observations.
+	•	Enable flagging system for deteriorating patient conditions.
+
+Acceptance Criteria:
+	•	Given I conduct a follow-up assessment, When I enter observations (e.g., pain levels, wound healing), Then they should be recorded under the appropriate treatment plan.
+	•	Given a patient’s condition is deteriorating or not improving, When I enter the progress note, Then the system should allow me to flag it for doctor review.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+User Story 5: 
+As a Nurse, I want to access all necessary patient care information (e.g., allergies, care plans, lab results) from one interface, So that I can provide safe and efficient care without delays.
+
+Tasks:
+	•	Build a centralized patient list view with quick access to profiles.
+	•	Set up real-time data syncing for updated patient information.
+
+Acceptance Criteria:
+	•	Given I am logged into my account, When I open the list of my assigned patients, Then I should be able to click into each one and view vital details like allergies, medications, and care notes.
+	•	Given patient data is updated by another provider, When I access their profile, Then I should see the most recent updates reflected immediately.
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Clinic Manager Role: 
+
+User Story 1:
+As a Clinic Manager, I want to view and monitor the overall daily operations of the clinic in a centralized dashboard, so that I can quickly identify issues, ensure smooth workflows, and make informed decisions in real time.
+
+Tasks:
+	•	Develop a dashboard view showing real-time clinic metrics.
+	•	Integrate alerts for critical operational issues.
+
+Acceptance Criteria:
+	•	Given I am logged into the system, When I open the operations dashboard, Then I should see real-time data on appointments, staffing, patient flow, and equipment availability.
+	•	Given I am monitoring clinic operations, When a critical issue arises (e.g., staff absence or equipment failure), Then I should receive an alert or notification.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+User Story 2:
+As a Clinic Manager, I want to create, edit, and approve staff schedules with visibility into availability, leave requests, and workload, so that I can ensure adequate staffing levels and optimize resource allocation.
+
+Tasks:
+	•	Create a scheduling interface with availability and conflict detection.
+	•	Automate notifications to staff upon schedule approval.
+
+Acceptance Criteria:
+	•	Given staff availability and leave requests are submitted, When I create or edit the schedule, Then I should be able to assign shifts while avoiding conflicts and overtime.
+	•	Given a schedule is finalized, When I approve and publish it, Then staff should receive automated notifications of their assigned shifts.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+User Story 3:
+As a Clinic Manager, I want to receive alerts or reports on policy deviations or compliance gaps, so that I can take corrective actions and ensure the clinic adheres to healthcare regulations and internal policies.
+
+Tasks:
+	•	Integrate compliance monitoring with policy tracking logic.
+	•	Generate flagging and alert system for deviations.
+
+Acceptance Criteria:
+	•	Given compliance monitoring is active, When a deviation from policy occurs (e.g., missed training, expired certifications), Then I should receive an alert or see it flagged in a report.
+	•	Given I review the compliance dashboard, When I click on a flagged item, Then I should see the details and suggested corrective actions.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+User Story 4:
+As a Clinic Manager, I want to access performance dashboards showing key metrics (e.g., patient wait times, staff productivity, appointment no-show rates), So that I can evaluate clinic performance and implement improvements where needed.
+
+Tasks:
+	•	Build filters for department and date range on the performance dashboard.
+	•	Link root cause indicators (e.g., staff data) to trend visualizations.
+
+Acceptance Criteria:
+	•	Given I am on the performance dashboard, When I filter by date range or department, Then the relevant metrics should update accordingly.
+	•	Given I view a performance trend, When the data indicates a drop in performance, Then I should be able to drill down to root cause indicators (e.g., staffing gaps, no-show patterns).
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+User Story 5: 
+As a Clinic Manager, I want to track individual staff performance over time and conduct reviews using data-driven insights, So that I can support employee development, recognize high performers, and address underperformance effectively.
+
+Tasks:
+	•	Collect and aggregate staff activity data for performance analysis.
+	•	Develop reporting feature for performance review summaries.
+
+Acceptance Criteria:
+	•	Given performance data is collected (e.g., punctuality, task completion, patient feedback), When I view a staff member’s profile, Then I should see a summary of their performance metrics over time.
+	•	Given I need to conduct a performance review, When I generate a report, Then it should include objective data and any associated manager notes or feedback.
